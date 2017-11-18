@@ -19,4 +19,11 @@ def getPastPrices(months):
     response = requests.get("https://api.coindesk.com/v1/bpi/historical/close.json?start=" + str(startDate) + "&end=" + str(endDate))
     j_obj = json.loads(response.text)
     pastPrices = j_obj["bpi"]
-    print(pastPrices) #Need to convert pastPrices to 2-D Array of Time / Price
+    #2D Array Conversion
+    PP_array = []
+    for key, value in pastPrices.items():
+        PP_array.append([key, value])
+    print(PP_array) #Need to convert pastPrices to 2-D Array of Time / Price
+
+#Test
+getPastPrices(1)
