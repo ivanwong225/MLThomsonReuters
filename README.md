@@ -3,3 +3,4 @@ A machine learning app to detect changes in BTC prices and produce brief article
 
 ## External API's
 Openpyxl - https://openpyxl.readthedocs.io/en/default/index.html
+BeautifulSoup - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
