@@ -31,18 +31,21 @@ def getPastPrices(months):
         PP_array.append([i, value])
         i += 1
 
-    return PP_array
     #print(PP_array) Need to convert pastPrices to 2-D Array of Time / Price
+    data = np.asarray(PP_array)
+    X,y = data[:, 0, np.newaxis], data[:, 1, np.newaxis]
+    X = X.astype(int)
+    return X, y
 
 def linearRegression(X, y):
 	values = spcs.mstats.linregress(X, y)
 	slope, intercept = values[0], values[1]
-	linearFunc = lambda x: slope * x + intercept
-	y2 = list(map(linearFunc, X))
-	plt.plot(X, y, 'ro')
-	plt.plot(X, y2, 'r--')
-	plt.xlim(0, len(X))
-	plt.show()
+	#linearFunc = lambda x: slope * x + intercept
+	#y2 = list(map(linearFunc, X))
+	#plt.plot(X, y, 'ro')
+	#plt.plot(X, y2, 'r--')
+	#plt.xlim(0, len(X))
+	#plt.show()
 	
 	return [slope, intercept]
 
@@ -54,24 +57,10 @@ def polynomialRegression(X, y):
         x.append(X[i][0])
         Y.append(y[i][0])
 
-    fit = np.polyfit(x, Y, 5)
+    fit = np.polyfit(x, Y, 3)
     fit_fn = np.poly1d(fit)
 
-    plt.plot(X, y, 'ro', x, fit_fn(x), '--')
-    plt.xlim(0, len(X))
-    plt.show()
-
-#Gets data for past 3 months
-#Test
-data = getPastPrices(3)
-#Presents data as an array instead of list
-data = np.asarray(data)
-X,y = data[:, 0, np.newaxis], data[:, 1, np.newaxis]
-X = X.astype(int)
-
-
-#Test
-#print(linearRegression(X, y))
-polynomialRegression(X, y)
-
-
+    #plt.plot(X, y, 'ro', x, fit_fn(x), '--')
+    #plt.xlim(0, len(X))
+    #plt.show()
+    return fit

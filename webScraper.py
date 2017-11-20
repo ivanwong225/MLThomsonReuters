@@ -7,7 +7,7 @@ from random import randint
 def scrape_news_summaries(s):
     time.sleep(randint(0, 2))  # relax and don't let google be angry
     r = requests.get("http://www.google.com/search?q="+s+"&tbm=nws")
-    print(r.status_code)  # Print the status code
+    #print(r.status_code)  # Print the status code
     content = r.text
     news_summaries = []
     soup = BeautifulSoup(content, "html.parser")
@@ -17,8 +17,12 @@ def scrape_news_summaries(s):
         news_summaries.append(title.text)
     return news_summaries
 
-
-l = scrape_news_summaries("bitcoin") #replace param for keyword
-for n in l:
-    print(n)
-    print()
+def extraBTCInfo(numberExtra):
+	ns = scrape_news_summaries("bitcoin")
+	returnList = []
+	for i in range(0, len(ns)):
+		if(len(returnList) >= numberExtra):
+			break
+		if("could" in ns[i] or "china" in ns[i] or "Hong Kong's" in ns[i]):
+			returnList.append(ns[i])
+	return returnList
