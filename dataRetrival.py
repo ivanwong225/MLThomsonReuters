@@ -46,6 +46,21 @@ def linearRegression(X, y):
 	
 	return [slope, intercept]
 
+def polynomialRegression(X, y):
+    x = []
+    Y= []
+
+    for i in range(len(X)):
+        x.append(X[i][0])
+        Y.append(y[i][0])
+
+    fit = np.polyfit(x, Y, 5)
+    fit_fn = np.poly1d(fit)
+
+    plt.plot(X, y, 'ro', x, fit_fn(x), '--')
+    plt.xlim(0, len(X))
+    plt.show()
+
 #Gets data for past 3 months
 #Test
 data = getPastPrices(3)
@@ -54,7 +69,9 @@ data = np.asarray(data)
 X,y = data[:, 0, np.newaxis], data[:, 1, np.newaxis]
 X = X.astype(int)
 
+
 #Test
-print(linearRegression(X, y))
+#print(linearRegression(X, y))
+polynomialRegression(X, y)
 
 
