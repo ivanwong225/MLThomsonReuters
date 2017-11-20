@@ -12,14 +12,13 @@ def scrape_news_summaries(s):
     news_summaries = []
     soup = BeautifulSoup(content, "html.parser")
 #    titles = soup.findAll("h3", {"class":"r"})  #actual titles
-    titles = soup.findAll("div", {"class": "st"}) #first sentences, kinda more like a headline?
-    print(titles)
+    titles = soup.findAll("div", {"class": "st"}) #first sentences, kinda more like a headline
     for title in titles:
         news_summaries.append(title.text)
     return news_summaries
 
 
-l = scrape_news_summaries("bitcoin")
+l = scrape_news_summaries("bitcoin") #replace param for keyword
 for n in l:
     print(n)
     print()
