@@ -54,6 +54,23 @@ def linearRegression(X, y):
 	
 	return [slope, intercept]
 
+def polynomialRegression(X, y, degree):
+    x = []
+    Y= []
+
+    for i in range(len(X)):
+        x.append(X[i][0])
+        Y.append(y[i][0])
+
+    fit = np.polyfit(x, Y, degree)
+    fit_fn = np.poly1d(fit)
+
+    #plt.plot(X, y, 'ro', x, fit_fn(x), '--')
+    #plt.xlim(0, len(X))
+    #plt.title("Polynomial Regression")
+    #plt.show()
+    return fit
+
 def crossValidationDegree(xs, ys):
     x = []
     Y= []
@@ -62,23 +79,22 @@ def crossValidationDegree(xs, ys):
         x.append(xs[i][0])
         Y.append(ys[i][0])
 
-    degrees = np.arange(1, 5)
-    cv_model = GridSearchCV(BasicPolynomialRegression(), param_grid={'degree': degrees}, scoring='neg_mean_squared_error')
+    estimator = CVPolynomialRegression()
+    degrees = np.arange(1, 25)
+    cv_model = GridSearchCV(estimator, param_grid={'deg': degrees}, scoring='neg_mean_squared_error')
     cv_model.fit(x, Y);
-    print("Degree is")
-    print(cv_model.best_params_)
-    return cv_model.best_estimator_.coef_
+    return cv_model.best_params_['deg']
 
-class BasicPolynomialRegression(BaseEstimator):
-    def __init__(self, degree=None):
-        self.degree = degree
+class CVPolynomialRegression(BaseEstimator):
+    def __init__(self, deg=None):
+        self.deg = deg
     
-    def fit(self, X, y, degree=None):
+    def fit(self, X, y, deg=None):
         self.model = LinearRegression(fit_intercept=False)
-        self.model.fit(np.vander(X, N=self.degree + 1), y)
+        self.model.fit(np.vander(X, N=self.deg + 1), y)
     
     def predict(self, x):
-        return self.model.predict(np.vander(x, N=self.degree + 1))
+        return self.model.predict(np.vander(x, N=self.deg + 1))
     
     @property
     def coef_(self):
