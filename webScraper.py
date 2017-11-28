@@ -11,8 +11,8 @@ def scrape_news_summaries(s):
     content = r.text
     news_summaries = []
     soup = BeautifulSoup(content, "html.parser")
-#    titles = soup.findAll("h3", {"class":"r"})  #actual titles
-    titles = soup.findAll("div", {"class": "st"}) #first sentences, kinda more like a headline
+    titles = soup.findAll("h3", {"class":"r"})  #actual titles
+    #titles = soup.findAll("div", {"class": "st"}) #first sentences, kinda more like a headline
     for title in titles:
         news_summaries.append(title.text)
     return news_summaries
@@ -23,6 +23,6 @@ def extraBTCInfo(numberExtra):
 	for i in range(0, len(ns)):
 		if(len(returnList) >= numberExtra):
 			break
-		if("could" in ns[i] or "china" in ns[i] or "Hong Kong's" in ns[i]):
+		if("bitcoin"):
 			returnList.append(ns[i])
 	return returnList

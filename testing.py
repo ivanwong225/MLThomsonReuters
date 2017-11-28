@@ -1,4 +1,5 @@
 import numpy as np
+import scipy.stats as st
 
 #Using a low percentage difference gives more anomalies, high percentage differences gives less
 low = 0.05
