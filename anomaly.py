@@ -2,8 +2,8 @@ import numpy as np
 import scipy.stats as st
 
 #Using a low percentage difference gives more anomalies, high percentage differences gives less
-low = 0.05
-med = 0.10
+low = 0.10
+med = 0.15
 high = 0.20
 
 #Takes linearVars as [slope, yintercept] and polyVars as [coefficients..., yintercept], and current as today's value
