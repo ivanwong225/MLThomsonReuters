@@ -2,28 +2,24 @@ import dataRetrival
 import datetime
 import anomaly as an
 ############### RESULTS OF COMPLETE EVALUATION ###################
-## P IS PRECISION, R IS RECALL, AND F1 IS F1 SCORE
+## P IS PRECISION, R IS RECALL, F1 IS F1 SCORE, A IS ACCURACY
 #             REQUIREMENT TO BE CONSIDERED ANOMALY 
 #           LOW            MEDIUM             HIGH
 # MONTHS
-#
 #   1     P: 0.75         P: 0.875           P: 1.0
 #         R: 0.6          R: 0.46            R: 0.133
 #		  F1: 0.66        F1: 0.60           F1: 0.235
-#
-#
+#         A: 0.7          A: 0.7             A: 0.566
 #
 #   3     P: 0.625        P: 0.75            P: 1.0
 #         R: 0.6          R: 0.6             R: 0.466
 #		  F1: 0.645       F1: 0.66           F1: 0.6363
-#
+#         A: 0.633        A: 0.7             A: 0.733
 #
 #   6     P: 0.6          P: 0.73            P: 0.83
 #         R: 0.8          R: 0.73            R: 0.66
 #		  F1: 0.6857      F1: 0.73           F1: 0.74
-#
-#
-#
+#         A: 0.63         A: 0.733           A: 0.7666
 #
 ############### RESULTS OF COMPLETE EVALUATION ###################
 def completeEvaluation(listDates, manualAnomalyList):
@@ -33,9 +29,9 @@ def completeEvaluation(listDates, manualAnomalyList):
 		for var in range(0, 3):
 			rl.append(precisionRecallF1(listDates, manualAnomalyList, months, var))
 		if(months == 1):
-			months = 3
+			months = 12
 		elif(months == 3):
-			months = 6
+			months = 12
 	return rl
 	
 def anomalyEvalSetUp(endDate, months):
@@ -62,13 +58,14 @@ def precisionRecallF1(listDates, manualAnomalyList, months, var):
 			trueN = trueN + 1
 	precision = trueP / (trueP + falseP)
 	recall = trueP / (trueP + falseN)
-	
 	F1 = 2 * (precision * recall) / (precision + recall)
-	print('\nEVALUATION RESULTS')
-	print('Precision: ' + str(precision))
-	print('Recall: ' + str(recall))
-	print('F1: ' + str(F1))
-	return precision, recall, F1, months, var
+	accuracy = (trueP + trueN) / (trueP + trueN + falseP + falseN)
+	#print('\nEVALUATION RESULTS')
+	#print('Precision: ' + str(precision))
+	#print('Recall: ' + str(recall))
+	#print('F1: ' + str(F1))
+
+	return precision, recall, F1, accuracy, months, var
 
 def precisionRecallHelper(date, months, var, manualAnomaly):
 	programAnomaly = anomalyDetect(date, months, var)
