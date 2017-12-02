@@ -1,0 +1,138 @@
+ANOMALIES
+1/4/2017
+5/11/2017
+5/24/2017
+6/6/2017
+7/16/2017
+7/20/2017
+8/14/2017
+9/1/2017
+9/14/2017
+10/9/2017
+11/3/2017
+11/12/2017
+11/16/2017
+11/27/2017
+12/1/2017
+
+datetime.date(2017, 1, 4),
+datetime.date(2017, 5, 11),
+datetime.date(2017, 5, 24),
+datetime.date(2017, 6, 6),
+datetime.date(2017, 7, 16),
+datetime.date(2017, 7, 20),
+datetime.date(2017, 8, 14),
+datetime.date(2017, 9, 1),
+datetime.date(2017, 9, 14),
+datetime.date(2017, 10, 9),
+datetime.date(2017, 11, 3),
+datetime.date(2017, 11, 12),
+datetime.date(2017, 11, 16),
+datetime.date(2017, 11, 27),
+datetime.date(2017, 12, 1)
+
+
+NON ANOMALIES 
+2/11/2017
+2/15/2017
+3/30/2017
+4/17/2017
+4/27/2017
+5/4/2017
+6/26/2017
+7/4/2017
+7/7/2017
+7/28/2017
+8/26/2017
+9/20/2017
+9/25/2017
+10/25/2017 
+11/9/2017
+
+datetime.date(2017, 2, 11),
+datetime.date(2017, 2, 15),
+datetime.date(2017, 3, 30),
+datetime.date(2017, 4, 17),
+datetime.date(2017, 4, 27),
+datetime.date(2017, 5, 4),
+datetime.date(2017, 6, 14),
+datetime.date(2017, 7, 4),
+datetime.date(2017, 7, 7),
+datetime.date(2017, 7, 28),
+datetime.date(2017, 8, 26),
+datetime.date(2017, 9, 20),
+datetime.date(2017, 9, 25),
+datetime.date(2017, 10, 25),
+datetime.date(2017, 11, 9)
+
+[datetime.date(2017, 1, 4),
+datetime.date(2017, 5, 11),
+datetime.date(2017, 5, 24),
+datetime.date(2017, 6, 6),
+datetime.date(2017, 7, 16),
+datetime.date(2017, 7, 20),
+datetime.date(2017, 8, 14),
+datetime.date(2017, 9, 1),
+datetime.date(2017, 9, 14),
+datetime.date(2017, 10, 9),
+datetime.date(2017, 11, 3),
+datetime.date(2017, 11, 12),
+datetime.date(2017, 11, 16),
+datetime.date(2017, 11, 27),
+datetime.date(2017, 12, 1),
+datetime.date(2017, 2, 11),
+datetime.date(2017, 2, 15),
+datetime.date(2017, 3, 30),
+datetime.date(2017, 4, 17),
+datetime.date(2017, 4, 27),
+datetime.date(2017, 5, 4),
+datetime.date(2017, 6, 14),
+datetime.date(2017, 7, 4),
+datetime.date(2017, 7, 7),
+datetime.date(2017, 7, 28),
+datetime.date(2017, 8, 26),
+datetime.date(2017, 9, 20),
+datetime.date(2017, 9, 25),
+datetime.date(2017, 10, 25),
+datetime.date(2017, 11, 9)
+]
+
+MANUAL ANOMALY LIST
+
+[True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+True,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False,
+False]
+
+
+
+
+
+
+
