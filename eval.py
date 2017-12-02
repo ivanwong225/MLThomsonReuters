@@ -29,9 +29,9 @@ def completeEvaluation(listDates, manualAnomalyList):
 		for var in range(0, 3):
 			rl.append(precisionRecallF1(listDates, manualAnomalyList, months, var))
 		if(months == 1):
-			months = 12
+			months = 3
 		elif(months == 3):
-			months = 12
+			months = 6
 	return rl
 	
 def anomalyEvalSetUp(endDate, months):
