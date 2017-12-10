@@ -109,7 +109,7 @@ def crossValidationDegree(xs, ys):
 		Y.append(ys[i][0])
 
 	estimator = CVPolynomialRegression()
-	degrees = np.arange(1, 25)
+	degrees = np.arange(2, 25)
 	cv_model = GridSearchCV(estimator, param_grid={'deg': degrees}, scoring='neg_mean_squared_error')
 	cv_model.fit(x, Y);
 	return cv_model.best_params_['deg']

@@ -156,6 +156,6 @@ False,
 False]
 
 #print(completeEvaluation(listDates, manualAnomalyList))
-
+anomalyDetect(datetime.date(2017, 12, 8), 3, 0)
 
 
