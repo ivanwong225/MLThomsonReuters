@@ -25,24 +25,18 @@ def polynomicalRegessionPlot(X, y, poly_func):
     plt.ylabel("Price")
     plt.show()
 
-def precisionPlot(months):
-    X, y = get_Precision_Values(months)
-    plt.title("Precision Values")
+def evaluationPlot():
+    plt.subplot(223)
+    X = [.10,.15,.25]
+    y = [.625,.75, 1.0]
+    plt.plot(X, y, label="Precision Values")
+    plt.title("Evaluation for three months of data")
     plt.xlabel("Requirement")
-    plt.ylabel("Precision")
-    plt.show()
-
-def recallPlot(months):
-    X, y = get_Recall_Values(months)
-    plt.title("Recall Values")
-    plt.xlabel("Requirement")
-    plt.ylabel("Recall")
-    plt.show()
-
-def f1Plot(months):
-    X, y = get_f1_Values(months)
-    plt.title("F1 Values")
-    plt.xlabel("Requirement")
-    plt.ylabel("F1")
+    plt.ylabel("Values")
+    y = [.6,.6,.466]
+    plt.plot(X, y, label="Recall")
+    y = [.645, .7, .733]
+    plt.plot(X, y, label="F1 Values")
+    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.show()
     
