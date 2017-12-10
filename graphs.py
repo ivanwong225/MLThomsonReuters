@@ -28,15 +28,15 @@ def polynomicalRegessionPlot(X, y, poly_func):
 def evaluationPlot():
     plt.subplot(223)
     X = [.10,.15,.25]
-    y = [.625,.75, 1.0]
+    y = [0.6785,0.7727,0.8333]
     plt.xticks([.05*k for k in range(1,6)])
     plt.plot(X, y, label="Precision Values")
-    plt.title("Evaluation for three months of data")
+    plt.title("Evaluation for six months of data")
     plt.xlabel("Requirement")
     plt.ylabel("Values")
-    y = [.6,.6,.466]
+    y = [0.8636,0.7727,0.6818]
     plt.plot(X, y, label="Recall")
-    y = [.645, .7, .733]
+    y = [0.76,0.7727,0.75]
     plt.plot(X, y, label="F1 Values")
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.show()
