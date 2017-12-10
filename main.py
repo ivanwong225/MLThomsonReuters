@@ -18,4 +18,4 @@ def main(months, var):
 	pChange = int(((currentPrice - previousPrice) / (previousPrice)) * 100)
 	#excel.WB(currentPrice, anomaly, headline, str(pChange) + "%", extraInfo)
 
-main(3, 0)
+main(1, 0)
