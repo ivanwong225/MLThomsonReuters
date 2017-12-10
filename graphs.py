@@ -30,7 +30,7 @@ def evaluationPlot():
     X = [.10,.15,.25]
     y = [0.6785,0.7727,0.8333]
     plt.xticks([.10,.15,.25])
-    plt.yticks([.10,.20,.30,.40,.50,.60,.70,.80,.90,1.0])
+    plt.yticks([.10,.20,.30,.40,.50,.60,.70,.80,.90,1.0], [".10",".20",".30",".40",".50",".60",".70",".80",".90","1.0"])
     plt.plot(X, y, label="Precision Values")
     plt.title("Evaluation for six months of data")
     plt.xlabel("Requirement")
