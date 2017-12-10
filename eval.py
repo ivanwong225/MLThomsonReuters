@@ -84,12 +84,13 @@ def precisionRecallHelper(date, months, var, manualAnomaly):
 	return None
 
 def anomalyDetect(date, months, var):
-	endDate = datetime.date(2017, 9, 14) #Manual Entry
+	endDate = datetime.date(2017, 12, 14) #Manual Entry
 	currentPrice, pastPricesX, pastPricesY = anomalyEvalSetUp(date, months)
 	linearVars = dataRetrival.linearRegression(pastPricesX, pastPricesY)
 	degree = dataRetrival.crossValidationDegree(pastPricesX, pastPricesY)
 	polyVars = dataRetrival.polynomialRegression(pastPricesX, pastPricesY, degree)
 	anomaly = an.checkAnomaly(linearVars, polyVars, len(pastPricesX) + 1, currentPrice, var)
+
 	return anomaly
 
 listDates = [datetime.date(2017, 1, 4),
@@ -155,4 +156,5 @@ False,
 False,
 False]
 
-print(completeEvaluation(listDates, manualAnomalyList))
+#print(completeEvaluation(listDates, manualAnomalyList))
+
