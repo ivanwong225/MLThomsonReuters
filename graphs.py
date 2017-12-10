@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Author: echanglc
 Spyder Editor
 
 This is a temporary script file.
@@ -25,24 +26,21 @@ def polynomicalRegessionPlot(X, y, poly_func):
     plt.ylabel("Price")
     plt.show()
 
-def precisionPlot(months):
-    X, y = get_Precision_Values(months)
-    plt.title("Precision Values")
+def evaluationPlot():
+    plt.subplot(223)
+    X = [.10,.15,.25]
+    y = [0.6785,0.7727,0.8333]
+    plt.xticks([.10,.15,.25])
+    plt.yticks([.10,.20,.30,.40,.50,.60,.70,.80,.90,1.0], [".10",".20",".30",".40",".50",".60",".70",".80",".90","1.0"])
+    plt.plot(X, y, label="Precision Values")
+    plt.title("Evaluation for six months of data")
     plt.xlabel("Requirement")
-    plt.ylabel("Precision")
-    plt.show()
-
-def recallPlot(months):
-    X, y = get_Recall_Values(months)
-    plt.title("Recall Values")
-    plt.xlabel("Requirement")
-    plt.ylabel("Recall")
-    plt.show()
-
-def f1Plot(months):
-    X, y = get_f1_Values(months)
-    plt.title("F1 Values")
-    plt.xlabel("Requirement")
-    plt.ylabel("F1")
+    plt.ylabel("Values")
+    y = [0.8636,0.7727,0.6818]
+    plt.plot(X, y, label="Recall")
+    y = [0.76,0.7727,0.75]
+    plt.plot(X, y, label="F1 Values")
+    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.show()
     
+evaluationPlot()

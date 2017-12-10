@@ -102,7 +102,7 @@ datetime.date(2017, 7, 20),
 datetime.date(2017, 8, 14),
 datetime.date(2017, 9, 1),
 datetime.date(2017, 9, 14),
-datetime.date(2017, 10, 9),
+datetime.date(2017, 10, 12),
 datetime.date(2017, 11, 3),
 datetime.date(2017, 11, 12),
 datetime.date(2017, 11, 16),
@@ -158,3 +158,8 @@ False]
 
 #print(completeEvaluation(listDates, manualAnomalyList))
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f3717bd45559f2b496f7589cd826a391715950ff
