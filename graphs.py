@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Author: echanglc
 Spyder Editor
 
 This is a temporary script file.
