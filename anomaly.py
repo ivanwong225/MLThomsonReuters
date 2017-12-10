@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import scipy.stats as st
 
 #Using a low percentage difference gives more anomalies, high percentage differences gives less
@@ -40,13 +41,37 @@ def checkAnomalyHelper(linearPredict, polyPredict, currentPrice, recepVal):
 		return True
 	return False
 
-def createHeadline(anomaly, currentPrice, previousPrice):
+def LinearPrediction(linearVars, current):
+	linearFunc = lambda x: (linearVars[0] * x) + linearVars[1]
+	linearPrediction = linearFunc(current)
+	return linearPrediction
+
+def PolynomialPrediction(polyVars, current):
+	polyFunc = np.poly1d(polyVars)
+	polyPrediction = polyFunc(current)
+	return polyPrediction
+
+def AccuraryChange(currentprice,linearPred, PolyPred):
+	LinChange = ((linearPred - currentprice)/ currentprice) * 100
+	PolyChange = ((PolyPred - currentprice)/currentprice) * 100
+	pChange = [0,0]
+	print(LinChange, PolyChange)
+	if (LinChange > PolyChange):
+		pChange[0] = PolyChange
+		pChange[1] = PolyPred
+	else:
+		pChange[0] =LinChange
+		pChange[1] = linearPred
+
+	return pChange
+
+def createHeadline(anomaly, currentPrice, pChange):
 	if(anomaly == False):
 		return "-"
-	if(previousPrice < currentPrice):
-		return "BTC has gone up from $" + str(previousPrice) + " to $" + str(currentPrice)
-	elif(previousPrice > currentPrice):
-		return "BTC has gone down from $" + str(previousPrice) + " to $" + str(currentPrice)
+	if(pChange[0] > 0 ):
+		return "BTC has spiked this week from " + str(math.ceil(pChange[0])) + "% " + "from $" + str(pChange[1]) + " to $" + str(currentPrice)
+	elif(pChange[0] < 0):
+		return "BTC has plummetted " + str(math.ceil(pChange[0])) + "% " "from $" + str(pChange[1]) + " to $" + str(currentPrice)
 	else:
 		return '-'
 
