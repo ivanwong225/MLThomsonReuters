@@ -29,6 +29,7 @@ def evaluationPlot():
     plt.subplot(223)
     X = [.10,.15,.25]
     y = [.625,.75, 1.0]
+    plt.axis([.10, .25, 0, 1])
     plt.plot(X, y, label="Precision Values")
     plt.title("Evaluation for three months of data")
     plt.xlabel("Requirement")
