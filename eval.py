@@ -157,9 +157,13 @@ False,
 False]
 
 #print(completeEvaluation(listDates, manualAnomalyList))
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
+=======
+anomalyDetect(datetime.date(2017, 12, 8), 3, 0)
+>>>>>>> a70e174cf270edffe42a8f8a8b38ad341c6f49d1
 
 
 >>>>>>> f3717bd45559f2b496f7589cd826a391715950ff
