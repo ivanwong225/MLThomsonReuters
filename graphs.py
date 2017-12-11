@@ -18,7 +18,7 @@ def linearRegressionPlot(X, y, linear_func):
     plt.ylabel("Price")
     plt.show()
 
-def polynomicalRegessionPlot(X, y, poly_func):
+def polynomialRegressionPlot(X, y, poly_func):
     plt.plot(X, y, 'ro', x, fit_fn(x), '--')
     plt.xlim(0, len(X))
     plt.title("Polynomial Regression")
