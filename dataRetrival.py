@@ -49,14 +49,14 @@ def linearRegression(X, y):
 	print("Standard Error of the Estimate for Linear Regression")
 	print (standardError(X, y, [slope, intercept], None, True))
 
-	#linearFunc = lambda x: slope * x + intercept
+	linearFunc = lambda x: slope * x + intercept
 	#y2 = list(map(linearFunc, X))
 	#plt.plot(X, y, 'ro')
 	#plt.plot(X, y2, 'r--')
 	#plt.xlim(0, len(X))
 	#plt.title("Linear Regression")
 	#plt.show()
-	
+	linearRegressionPlot(X, y, linearFunc)
 	return [slope, intercept]
 
 def rSquared(X, y):
@@ -82,6 +82,7 @@ def polynomialRegression(X, y, degree):
 	#plt.xlim(0, len(X))
 	#plt.title("Polynomial Regression")
 	#plt.show()
+	polynomialRegressionPlot(X, y, fit_fn)
 	return fit
 
 def standardError(X, Y, linearVars, polyVars, useLinear):
