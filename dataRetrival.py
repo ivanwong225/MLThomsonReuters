@@ -1,6 +1,7 @@
 import json
 import requests
 import datetime
+import graphs
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as spcs
