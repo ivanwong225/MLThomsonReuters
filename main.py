@@ -3,7 +3,6 @@ import webScraper
 import excel
 import anomaly as an
 import datetime
-import eval
 
 def main(months, var):
 	currentPrice = dataRetrival.getCurrentPrice()
@@ -23,4 +22,4 @@ def main(months, var):
 
 	#excel.WB(currentPrice, anomaly, headline, str(pChange) + "%", extraInfo)
 
-main(1, 0)
+main(3, 0)

@@ -90,7 +90,11 @@ def anomalyDetect(date, months, var):
 	degree = dataRetrival.crossValidationDegree(pastPricesX, pastPricesY)
 	polyVars = dataRetrival.polynomialRegression(pastPricesX, pastPricesY, degree)
 	anomaly = an.checkAnomaly(linearVars, polyVars, len(pastPricesX) + 1, currentPrice, var)
-
+	LinearPred = an.LinearPrediction(linearVars, len(pastPricesX))
+	PolyPred = an.PolynomialPrediction(polyVars, len(pastPricesX))
+	pChange = an.AccuraryChange(currentPrice, LinearPred, PolyPred)
+	headline = an.createHeadline(anomaly, currentPrice, pChange)
+	print(headline)
 	return anomaly
 
 listDates = [datetime.date(2017, 1, 4),
@@ -155,15 +159,3 @@ False,
 False,
 False,
 False]
-
-#print(completeEvaluation(listDates, manualAnomalyList))
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
-=======
-anomalyDetect(datetime.date(2017, 12, 8), 3, 0)
->>>>>>> a70e174cf270edffe42a8f8a8b38ad341c6f49d1
-
-
->>>>>>> f3717bd45559f2b496f7589cd826a391715950ff
