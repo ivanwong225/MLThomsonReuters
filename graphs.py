@@ -9,7 +9,7 @@ This is a temporary script file.
 import matplotlib.pyplot as plt
 
 def linearRegressionPlot(X, y, linear_func):
-    y2 = list(map(linearFunc, X))
+    y2 = list(map(linear_func, X))
     plt.plot(X, y, 'ro')
     plt.plot(X, y2, 'r--')
     plt.xlim(0, len(X))
@@ -18,8 +18,8 @@ def linearRegressionPlot(X, y, linear_func):
     plt.ylabel("Price")
     plt.show()
 
-def polynomicalRegessionPlot(X, y, poly_func):
-    plt.plot(X, y, 'ro', x, fit_fn(x), '--')
+def polynomialRegressionPlot(X, y, poly_func):
+    plt.plot(X, y, 'ro', X, poly_func(X), '--')
     plt.xlim(0, len(X))
     plt.title("Polynomial Regression")
     plt.xlabel("Time")
@@ -42,5 +42,3 @@ def evaluationPlot():
     plt.plot(X, y, label="F1 Values")
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.show()
-    
-evaluationPlot()
