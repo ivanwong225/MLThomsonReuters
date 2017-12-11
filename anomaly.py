@@ -52,11 +52,11 @@ def PolynomialPrediction(polyVars, current):
 	return polyPrediction
 
 def AccuraryChange(currentprice,linearPred, PolyPred):
-	LinChange = ((linearPred - currentprice)/ currentprice) * 100
-	PolyChange = ((PolyPred - currentprice)/currentprice) * 100
+	LinChange = ((currentprice - linearPred)/ linearPred) * 100
+	PolyChange = ((currentprice - PolyPred)/PolyPred) * 100
 	pChange = [0,0]
 	print(LinChange, PolyChange)
-	if (LinChange > PolyChange):
+	if (math.fabs(LinChange) > math.fabs(PolyChange)):
 		pChange[0] = PolyChange
 		pChange[1] = PolyPred
 	else:
@@ -69,9 +69,9 @@ def createHeadline(anomaly, currentPrice, pChange):
 	if(anomaly == False):
 		return "-"
 	if(pChange[0] > 0 ):
-		return "BTC has spiked this week from " + str(math.ceil(pChange[0])) + "% " + "from $" + str(pChange[1]) + " to $" + str(currentPrice)
+		return "BTC Hits Unusual High - Breaking predicted values by " + str(math.ceil(pChange[0])) + "%! "
 	elif(pChange[0] < 0):
-		return "BTC has plummetted " + str(math.ceil(pChange[0])) + "% " "from $" + str(pChange[1]) + " to $" + str(currentPrice)
+		return "BTC Hit New Lows - Going below Predicted Values by " + str(math.ceil(pChange[0])) + "% " "from $" + str(pChange[1]) + " to $" + str(currentPrice)
 	else:
 		return '-'
 
