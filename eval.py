@@ -144,7 +144,6 @@ listDates = [datetime.date(2017, 1, 4),
 ]
 
 manualAnomalyList = [True,
-<<<<<<< HEAD
 True,
 True,
 True,
@@ -174,57 +173,9 @@ False,
 False,
 False,
 False]
-=======
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     True,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False,
-                     False]
 
-#print(completeEvaluation(listDates, manualAnomalyList))
-<<<<<<< HEAD
 anomalyDetect(datetime.date(2017,12,8), 3, 0)
 =======
 
 anomalyDetect(datetime.date(2017, 12, 8), 3, 0)
 
->>>>>>> 158f70f92dd6b302334a7e06db874fd4e04fa4f5
->>>>>>> 166f2a0264eaefea844b462a3b42626b2e0c1f61
