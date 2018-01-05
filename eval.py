@@ -1,27 +1,9 @@
+#Complete Evaluation is for evaluation of our model
+#Created by Rohan Johar
 import dataRetrival
 import datetime
 import anomaly as an
-############### RESULTS OF COMPLETE EVALUATION ###################
-## P IS PRECISION, R IS RECALL, F1 IS F1 SCORE, A IS ACCURACY
-#             REQUIREMENT TO BE CONSIDERED ANOMALY 
-#           LOW            MEDIUM             HIGH
-# MONTHS
-#   1     P: 0.75         P: 0.875           P: 1.0
-#         R: 0.6          R: 0.46            R: 0.133
-#		  F1: 0.66        F1: 0.60           F1: 0.235
-#         A: 0.7          A: 0.7             A: 0.566
-#
-#   3     P: 0.625        P: 0.75            P: 1.0
-#         R: 0.6          R: 0.6             R: 0.466
-#		  F1: 0.645       F1: 0.66           F1: 0.6363
-#         A: 0.633        A: 0.7             A: 0.733
-#
-#   6     P: 0.6          P: 0.73            P: 0.83
-#         R: 0.8          R: 0.73            R: 0.66
-#		  F1: 0.6857      F1: 0.73           F1: 0.74
-#         A: 0.63         A: 0.733           A: 0.7666
-#
-############### RESULTS OF COMPLETE EVALUATION ###################
+
 def completeEvaluation(listDates, manualAnomalyList):
 	months = 1
 	rl = []
@@ -98,49 +80,49 @@ def anomalyDetect(date, months, var):
 	return anomaly
 
 listDates = [datetime.date(2017, 1, 4),
-             datetime.date(2017, 3, 18),
-             datetime.date(2017, 5, 11),
-             datetime.date(2017, 5, 24),
-             datetime.date(2017, 5, 27),
-             datetime.date(2017, 6, 6),
-             datetime.date(2017, 6, 10),
-             datetime.date(2017, 7, 16),
-             datetime.date(2017, 7, 20),
-             datetime.date(2017, 8, 14),
-             datetime.date(2017, 9, 1),
-             datetime.date(2017, 9, 14),
-             datetime.date(2017, 10, 9),
-             datetime.date(2017, 11, 3),
-             datetime.date(2017, 11, 10),
-             datetime.date(2017, 11, 12),
-             datetime.date(2017, 11, 16),
-             datetime.date(2017, 11, 27),
-             datetime.date(2017, 12, 1),
-             datetime.date(2017, 12, 6),
-             datetime.date(2017, 12, 7),
-             datetime.date(2017, 12, 9),
-             datetime.date(2017, 1, 15),
-             datetime.date(2017, 2, 11),
-             datetime.date(2017, 2, 15),
-             datetime.date(2017, 3, 30),
-             datetime.date(2017, 4, 10),
-             datetime.date(2017, 4, 17),
-             datetime.date(2017, 4, 27),
-             datetime.date(2017, 5, 4),
-             datetime.date(2017, 5, 16),
-             datetime.date(2017, 6, 14),
-             datetime.date(2017, 6, 26),
-             datetime.date(2017, 7, 4),
-             datetime.date(2017, 7, 7),
-             datetime.date(2017, 7, 28),
-             datetime.date(2017, 8, 1),
-             datetime.date(2017, 8, 26),
-             datetime.date(2017, 9, 10),
-             datetime.date(2017, 9, 20),
-             datetime.date(2017, 9, 25),
-             datetime.date(2017, 10, 6),
-             datetime.date(2017, 10, 25),
-             datetime.date(2017, 11, 9)
+			 datetime.date(2017, 3, 18),
+			 datetime.date(2017, 5, 11),
+			 datetime.date(2017, 5, 24),
+			 datetime.date(2017, 5, 27),
+			 datetime.date(2017, 6, 6),
+			 datetime.date(2017, 6, 10),
+			 datetime.date(2017, 7, 16),
+			 datetime.date(2017, 7, 20),
+			 datetime.date(2017, 8, 14),
+			 datetime.date(2017, 9, 1),
+			 datetime.date(2017, 9, 14),
+			 datetime.date(2017, 10, 9),
+			 datetime.date(2017, 11, 3),
+			 datetime.date(2017, 11, 10),
+			 datetime.date(2017, 11, 12),
+			 datetime.date(2017, 11, 16),
+			 datetime.date(2017, 11, 27),
+			 datetime.date(2017, 12, 1),
+			 datetime.date(2017, 12, 6),
+			 datetime.date(2017, 12, 7),
+			 datetime.date(2017, 12, 9),
+			 datetime.date(2017, 1, 15),
+			 datetime.date(2017, 2, 11),
+			 datetime.date(2017, 2, 15),
+			 datetime.date(2017, 3, 30),
+			 datetime.date(2017, 4, 10),
+			 datetime.date(2017, 4, 17),
+			 datetime.date(2017, 4, 27),
+			 datetime.date(2017, 5, 4),
+			 datetime.date(2017, 5, 16),
+			 datetime.date(2017, 6, 14),
+			 datetime.date(2017, 6, 26),
+			 datetime.date(2017, 7, 4),
+			 datetime.date(2017, 7, 7),
+			 datetime.date(2017, 7, 28),
+			 datetime.date(2017, 8, 1),
+			 datetime.date(2017, 8, 26),
+			 datetime.date(2017, 9, 10),
+			 datetime.date(2017, 9, 20),
+			 datetime.date(2017, 9, 25),
+			 datetime.date(2017, 10, 6),
+			 datetime.date(2017, 10, 25),
+			 datetime.date(2017, 11, 9)
 ]
 
 manualAnomalyList = [True,
@@ -174,8 +156,12 @@ False,
 False,
 False]
 
-anomalyDetect(datetime.date(2017,12,8), 3, 0)
-=======
+anomalyDetect(datetime.date(2017, 12, 7), 1, 0)
+anomalyDetect(datetime.date(2017, 12, 8), 1, 0)
+anomalyDetect(datetime.date(2017, 12, 9), 1, 0)
 
-anomalyDetect(datetime.date(2017, 12, 8), 3, 0)
+anomalyDetect(datetime.date(2017, 12, 7), 6, 0)
+anomalyDetect(datetime.date(2017, 12, 8), 6, 0)
+anomalyDetect(datetime.date(2017, 12, 9), 6, 0)
+
 

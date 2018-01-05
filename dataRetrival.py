@@ -56,7 +56,7 @@ def linearRegression(X, y):
 	#plt.xlim(0, len(X))
 	#plt.title("Linear Regression")
 	#plt.show()
-	graphs.linearRegressionPlot(X, y, linearFunc)
+	#graphs.linearRegressionPlot(X, y, linearFunc)
 	return [slope, intercept]
 
 def rSquared(X, y):
@@ -82,7 +82,7 @@ def polynomialRegression(X, y, degree):
 	#plt.xlim(0, len(X))
 	#plt.title("Polynomial Regression")
 	#plt.show()
-	graphs.polynomialRegressionPlot(X, y, fit_fn)
+	#graphs.polynomialRegressionPlot(X, y, fit_fn)
 	return fit
 
 def standardError(X, Y, linearVars, polyVars, useLinear):
